@@ -14,12 +14,14 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.SafeCar.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
 
-    <style name="Theme.SafeCar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+        <style name="Theme.SafeCar.NoActionBar">
+            <item name="windowActionBar">false</item>
+            <item name="windowNoTitle">true</item>
+        </style>
 
-    <style name="Theme.SafeCar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-</resources>
+        <style name="Theme.SafeCar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+        <style name="Theme.SafeCar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    </resources>

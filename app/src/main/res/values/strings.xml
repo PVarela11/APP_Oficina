@@ -7,6 +7,7 @@
     <string name="user">User</string>
     <string name="settings">Settings</string>
     <string name="settings_caralhooooo">Settings CARALHOOOOO</string>
+
     <string name="title_activity_settings">SettingsActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -51,4 +52,15 @@
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>
 
+
+    <string name="hint_email">Insira o seu email</string>
+    <string name="hint_pw">Insira a sua password</string>
+    <string name="erro_login">Credencias erradas</string>
+    <string name="erro_email">Email errado</string>
+    <string name="erro_pw">Password Errada</string>
+    <string name="cb_login">Guardar informação</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_registar">Registar</string>
+    <string name="btn_guest">Entrar como convidado</string>
+    <string name="teste_registar">Isto é um teste ao registar</string>
 </resources>

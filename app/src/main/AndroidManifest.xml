@@ -10,16 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SafeCar">
         <activity
-            android:name=".PreferencesActivity"
+            android:name=".LoginActivity"
             android:label="@string/title_activity_settings"
-            android:theme="@style/Theme.SafeCar.NoActionBar" />
-        <activity android:name=".MainActivity">
+            android:theme="@style/Theme.SafeCar.NoActionBar" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".RegistarActivity"/>
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".PreferencesActivity"/>
     </application>
 
 </manifest>

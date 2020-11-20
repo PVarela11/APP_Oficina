@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home_guest"
+        android:title="@string/home"
+        android:icon="@drawable/ic_action_home"
+        />
+
+    <item
+        android:id="@+id/gps_guest"
+        android:title="@string/gps"
+        android:icon="@drawable/ic_action_maps"
+        />
+
+    <item
+        android:id="@+id/user_guest"
+        android:title="@string/user"
+        android:icon="@drawable/ic_action_user"
+        />
+
+    <item
+        android:id="@+id/settings_guest"
+        android:title="@string/settings"
+        android:icon="@drawable/ic_action_settings"
+        />
+</menu>
