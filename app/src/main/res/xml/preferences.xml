@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="Account Settings">
+        <Preference
+            android:fragment="com.example.safecar.PreferencesFragment_2"
+            android:key="account"
+            android:title="Username"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Geral">
+        <Preference
+            android:key="geral"
+            android:title="Geral"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Notifications (Meter dentro do geral)">
+        <SwitchPreferenceCompat
+            android:key="notifications"
+            android:title="Notifications"
+            android:summary="Notifications enabled"/>
+
+        <MultiSelectListPreference
+            android:key="multi_select_list"
+            android:title="Types of notifications"
+            android:summary="TesteTesteTeste"
+            android:entries="@array/entries"
+            android:entryValues="@array/values"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="about"
+        android:title="About">
+
+        <Preference
+            android:key="privacy_policy"
+            android:title="Privacy Policy"
+            />
+        <Preference
+            android:key="about_us"
+            android:title="About us"
+            />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Support">
+
+        <Preference
+            android:key="donate"
+            android:title="Donate" />
+        <Preference
+            android:key="report_bug"
+            android:title="Report a bug"
+            />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title=""/>
+        <Preference
+            android:key="logout"
+            android:title="Log Out"
+        />
+</PreferenceScreen>

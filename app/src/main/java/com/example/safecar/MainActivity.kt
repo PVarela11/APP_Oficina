@@ -1,5 +1,6 @@
 package com.example.safecar
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.FragmentTransaction
@@ -10,7 +11,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var homeFragment: HomeFragment
     lateinit var gpsFragment: GPSFragment
     lateinit var userFragment: UserFragment
-    lateinit var settingsFragment: SettingsFragment
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,17 +54,23 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.settings -> {
+                    goToSettingsActivity()
+                    //settingsFragment = SettingsFragment()
+                    //supportFragmentManager
+                      //      .beginTransaction()
+                       //     .replace(R.id.frame_layout, settingsFragment)
+                        //    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                         //   .commit()
 
-                    settingsFragment = SettingsFragment()
-                    supportFragmentManager
-                            .beginTransaction()
-                            .replace(R.id.frame_layout, settingsFragment)
-                            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                            .commit()
                 }
             }
 
             true
         }
+    }
+
+    private fun goToSettingsActivity(){
+        val intent = Intent(this, PreferencesActivity::class.java)
+        startActivity(intent)
     }
 }
