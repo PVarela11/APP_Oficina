@@ -12,10 +12,11 @@ class MainActivity : AppCompatActivity() {
     lateinit var gpsFragment: GPSFragment
     lateinit var userFragment: UserFragment
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bot_nav)
 
         //if (savedInstanceState != null) {

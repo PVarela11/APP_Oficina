@@ -15,6 +15,7 @@ class HomeFragment : Fragment() {
 
     //private lateinit var recyclerView: RecyclerView
     //private lateinit var viewAdapter: RecyclerView.Adapter<*>
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment

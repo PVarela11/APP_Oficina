@@ -7,16 +7,13 @@
     <string name="user">User</string>
     <string name="settings">Settings</string>
     <string name="settings_caralhooooo">Settings CARALHOOOOO</string>
-    <string name="btn_fav">Favoritos</string>
-    <string name="btn_carros">Carros</string>
     <string name="title_activity_settings">SettingsActivity</string>
-    <string name="carro">Carros</string>
-    <string name="favoritos">Favoritos</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="alerts">Alertas</string>
@@ -28,7 +25,6 @@
     <string name="light">Light</string>
     <string name="dark">Dark</string>
     <string name="display">Display</string>
-    <string name="avatar">Nome do utilizador </string>
 
     <string-array name="theme_entries">
         <item>@string/automatic</item>
@@ -54,17 +50,5 @@
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>
-
-
-    <string name="hint_email">Insira o seu email</string>
-    <string name="hint_pw">Insira a sua password</string>
-    <string name="erro_login">Credencias erradas</string>
-    <string name="erro_email">Email errado</string>
-    <string name="erro_pw">Password Errada</string>
-    <string name="cb_login">Guardar informação</string>
-    <string name="btn_login">Login</string>
-    <string name="btn_registar">Registar</string>
-    <string name="btn_guest">Entrar como convidado</string>
-    <string name="teste_registar">Isto é um teste ao registar</string>
 
 </resources>
