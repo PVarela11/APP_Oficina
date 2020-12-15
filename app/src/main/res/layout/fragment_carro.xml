@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserFragment">
+ >
 
 
 
@@ -22,7 +22,6 @@
         android:layout_marginTop="50dp"/>
 
     <TextView
-        android:id="@+id/textusername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageButton"
@@ -30,26 +29,6 @@
         android:textSize="25sp"
         android:text="@string/avatar"
         android:layout_centerInParent="true"/>
-
-    <Button
-        android:id="@+id/btncarro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textusername"
-        android:layout_marginTop="35dp"
-        android:layout_marginLeft="100dp"
-        android:text="Carros" />
-
-    <Button
-    android:id="@+id/btnfav"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/textusername"
-    android:layout_toRightOf="@id/btncarro"
-    android:layout_marginTop="35dp"
-    android:layout_marginLeft="15dp"
-    android:layout_centerInParent="true"
-    android:text="Favoritos" />
 
 
 </RelativeLayout>

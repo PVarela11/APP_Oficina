@@ -11,7 +11,6 @@
         android:theme="@style/Theme.SafeCar">
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_settings"
             android:theme="@style/Theme.SafeCar.NoActionBar" >
 
             <intent-filter>
