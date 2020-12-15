@@ -12,26 +12,33 @@ class MainActivity : AppCompatActivity() {
     lateinit var gpsFragment: GPSFragment
     lateinit var userFragment: UserFragment
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val bottomNavigationView : BottomNavigationView = findViewById(R.id.bot_nav)
+        val bottomNavigationView: BottomNavigationView = findViewById(R.id.bot_nav)
+
+        //if (savedInstanceState != null) {
+            homeFragment = HomeFragment()
+            supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.frame_layout, homeFragment)
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .commit()
+        //}
 
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
 
             when (item.itemId) {
 
                 R.id.home -> {
-
-                    homeFragment = HomeFragment()
-                    supportFragmentManager
-                            .beginTransaction()
-                            .replace(R.id.frame_layout, homeFragment)
-                            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                            .commit()
-                }
+                homeFragment = HomeFragment()
+                        supportFragmentManager
+                        . beginTransaction ()
+                    .replace(R.id.frame_layout, homeFragment)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
+            }
 
                 R.id.gps -> {
 
