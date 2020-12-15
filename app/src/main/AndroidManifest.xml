@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SafeCar">
         <activity
-            android:name="com.example.safecar.LoginActivity"
-            android:label="SafeCar"
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_settings"
             android:theme="@style/Theme.SafeCar.NoActionBar" >
 
             <intent-filter>
