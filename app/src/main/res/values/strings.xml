@@ -25,6 +25,17 @@
     <string name="light">Light</string>
     <string name="dark">Dark</string>
     <string name="display">Display</string>
+    <string name="erro_pw">Password invalida</string>
+    <string name="cb_login">Guardar informação</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_registar">Registar</string>
+    <string name="btn_guest">Entrar como convidado</string>
+    <string name="hint_email">Insira o seu email</string>
+    <string name="hint_pw">Insira a sua password</string>
+    <string name="erro_login">Credenciais invalidas</string>
+
+
+
 
     <string-array name="theme_entries">
         <item>@string/automatic</item>
