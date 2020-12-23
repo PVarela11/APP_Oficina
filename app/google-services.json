@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "704467391456",
+    "firebase_url": "https://safecar-21a54-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "safecar-21a54",
+    "storage_bucket": "safecar-21a54.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704467391456:android:60d29df745e7f9f9a05185",
+        "android_client_info": {
+          "package_name": "com.example.safecar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "704467391456-blqrihgnd49njt4c2umsqbth4gp76mj6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCm0NGRofM-L4buF_DibJ6DOpuuUvivyTQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "704467391456-blqrihgnd49njt4c2umsqbth4gp76mj6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
