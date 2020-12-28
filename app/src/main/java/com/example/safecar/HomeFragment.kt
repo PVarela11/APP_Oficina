@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.safecar.model.Oficina
-import com.example.safecar.model.fakeOficinas
+//import com.example.safecar.model.fakeOficinas
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
@@ -25,9 +27,34 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //mudar as imagens das estrelas para o widget android de rating
 
-        recycler_view.adapter = OficinaAdapter(requireActivity(),fakeOficinas())
+        //recycler_view.adapter = OficinaAdapter(requireActivity(),fakeOficinas())
+        recycler_view.adapter = OficinaAdapter(requireActivity())
         recycler_view.layoutManager = LinearLayoutManager(activity)
-
+        loadOficinas()
     }
+
+    private fun loadOficinas() {
+        val docs = Firebase.firestore.collection("Oficinas").orderBy("nome")
+        docs.addSnapshotListener { snapshot, e ->
+            val oficinas = mutableListOf<Oficina>()
+            for (document in snapshot!!.documents){
+                val oficina = Oficina(
+                    "${document.data?.get("nome")}",
+                    "${document.data?.get("nome")}",
+                    "${document.data?.get("descricao")}",
+                    "${document.data?.get("disponibilidade")}",
+                    "${document.data?.get("estrelas")}",
+                    "${document.data?.get("oficinaIMG")}"
+                )
+
+                oficinas += oficina
+            }
+
+            val adapter = recycler_view.adapter as OficinaAdapter
+            adapter.submitList(oficinas)
+        }
+    }
+
 }
