@@ -33,9 +33,7 @@
     <string name="hint_email">Insira o seu email</string>
     <string name="hint_pw">Insira a sua password</string>
     <string name="erro_login">Credenciais invalidas</string>
-
-
-
+    <string name="avatar">Username</string>
 
     <string-array name="theme_entries">
         <item>@string/automatic</item>

@@ -1,15 +1,16 @@
 package com.example.safecar
 
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.view.inputmethod.EditorInfo
-import android.widget.Button
-import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.textfield.TextInputEditText
+import com.firebase.ui.auth.AuthUI
+import com.google.android.gms.common.SignInButton
 
+
+private const val REQUEST_SIGN_IN = 12345
 
 class LoginActivity : AppCompatActivity() {
 
@@ -19,71 +20,31 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        findViewById<Button>(R.id.btn_registar).setOnClickListener(){
-            val intent = Intent(this, RegistarActivity::class.java)
-            startActivity(intent)
-        }
-
-        findViewById<Button>(R.id.btn_guest).setOnClickListener(){
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-
         setup()
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
 
+        if(requestCode == REQUEST_SIGN_IN && resultCode == Activity.RESULT_OK){
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+    }
 
     private fun setup() {
-        findViewById<TextInputEditText>(R.id.tet_username).setOnEditorActionListener { _, actionId, _ ->
-            if (actionId == EditorInfo.IME_ACTION_DONE) {
-                validateCredentialsAndRedirect()
-            }
-            true
-        }
+        findViewById<SignInButton>(R.id.btn_google).setOnClickListener() {
 
-        findViewById<TextInputEditText>(R.id.tet_password).setOnEditorActionListener { _, actionId, _ ->
-            if (actionId == EditorInfo.IME_ACTION_DONE) {
-                validateCredentialsAndRedirect()
-            }
-            true
-        }
-
-        findViewById<Button>(R.id.btn_login).setOnClickListener {
-            validateCredentialsAndRedirect()
-        }
-
-        viewModel.loginResultLiveData.observe(this){ loginResult ->
-            if (!loginResult) {
-                findViewById<TextView>(R.id.tv_error).text = getString(R.string.erro_login)
-            }else{
-                val username = findViewById<TextInputEditText>(R.id.tet_username).text.toString()
-
-                val intent = Intent(this, MainActivity::class.java)
-                intent.putExtra(EXTRA_USERNAME, username)
-
-                startActivity(intent)
-                finish()
-            }
+            val providers = arrayListOf(AuthUI.IdpConfig.GoogleBuilder().build())
+            startActivityForResult(
+                AuthUI.getInstance()
+                    .createSignInIntentBuilder()
+                    .setAvailableProviders(providers)
+                    .build(),
+                REQUEST_SIGN_IN
+            )
         }
     }
 
-    private fun validateCredentialsAndRedirect() {
-
-        val username = findViewById<TextInputEditText>(R.id.tet_username).text.toString()
-        if (username.isEmpty()) {
-            findViewById<TextView>(R.id.tv_error).text = getString(R.string.erro_login)
-            return
-        }
-
-        val password = findViewById<TextInputEditText>(R.id.tet_password).text.toString()
-        if (password.isEmpty()) {
-            findViewById<TextView>(R.id.tv_error).text = getString(R.string.erro_pw)
-            return
-        }
-
-        viewModel.areCredentialsValid(username, password)
-
-    }
 
 }

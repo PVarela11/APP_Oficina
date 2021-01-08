@@ -6,7 +6,9 @@ data class Oficina(
         val descricao: String,
         val disponibilidade: String,
         val estrelas: String,
-        val oficinaIMG: String
+        val oficinaIMG: String,
+        val reboque: String,
+        val morada: String
 )
 
 //class OficinaBuilder {

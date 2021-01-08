@@ -1,21 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UserFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:src="@tools:sample/avatars"
+        android:contentDescription="@string/avatar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"/>
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/textusername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageButton"
+        android:layout_marginTop="15dp"
+        android:textSize="25sp"
+        android:text="@string/avatar"
+        android:layout_centerInParent="true"/>
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="296dp"
-        android:layout_height="259dp"
-        tools:text="User" />
+        android:id="@+id/btncarro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textusername"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="100dp"
+        android:text="Carros"/>
 
-</FrameLayout>
+    <Button
+        android:id="@+id/btnfav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textusername"
+        android:layout_toRightOf="@id/btncarro"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="15dp"
+        android:layout_centerInParent="true"
+        android:text="Favoritos"/>
+
+    <FrameLayout
+        android:id="@+id/container_user"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:orientation="vertical"
+        android:layout_below="@id/btncarro"
+        android:layout_marginTop="35dp">
+
+
+    </FrameLayout>
+
+
+</RelativeLayout>

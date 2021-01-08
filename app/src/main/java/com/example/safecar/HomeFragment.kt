@@ -27,7 +27,6 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //mudar as imagens das estrelas para o widget android de rating
 
         //recycler_view.adapter = OficinaAdapter(requireActivity(),fakeOficinas())
         recycler_view.adapter = OficinaAdapter(requireActivity())
@@ -36,17 +35,19 @@ class HomeFragment : Fragment() {
     }
 
     private fun loadOficinas() {
-        val docs = Firebase.firestore.collection("Oficinas").orderBy("nome")
+        val docs = Firebase.firestore.collection("Oficinas").orderBy("estrelas")
         docs.addSnapshotListener { snapshot, e ->
             val oficinas = mutableListOf<Oficina>()
             for (document in snapshot!!.documents){
                 val oficina = Oficina(
-                    "${document.data?.get("nome")}",
+                    "${document.data?.get("id")}",
                     "${document.data?.get("nome")}",
                     "${document.data?.get("descricao")}",
                     "${document.data?.get("disponibilidade")}",
                     "${document.data?.get("estrelas")}",
-                    "${document.data?.get("oficinaIMG")}"
+                    "${document.data?.get("oficinaIMG")}",
+                    "${document.data?.get("reboque")}",
+                    "${document.data?.get("morada")}"
                 )
 
                 oficinas += oficina

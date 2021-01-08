@@ -18,7 +18,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bot_nav)
-
+        //setSupportActionBar(findViewById(R.id.toolbar))
+        //supportActionBar?.setDisplayHomeAsUpEnabled(true)
         //if (savedInstanceState != null) {
             homeFragment = HomeFragment()
             supportFragmentManager
