@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ItemActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_item"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:background="?attr/colorPrimary"
+        app:menu="@menu/activity_item_toolbar"
+        android:elevation="4dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+        <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+          android:theme="@style/ThemeOverlay.AppCompat.ActionBar"-->
+
+
+    <ImageView
+        android:id="@+id/oficina_img"
+        android:layout_width="347dp"
+        android:layout_height="202dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_item"/>
+
+    <TextView
+        android:id="@+id/oficina_nome"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:text="Nome Oficina"
+        app:layout_constraintEnd_toEndOf="@+id/oficina_img"
+        app:layout_constraintStart_toStartOf="@+id/oficina_img"
+        app:layout_constraintTop_toBottomOf="@+id/oficina_img" />
+
+
+    <TextView
+        android:id="@+id/oficina_desc"
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:layout_marginTop="80dp"
+        android:text="Descrição detalhada da oficina"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/oficina_nome" />
+
+    <TextView
+        android:id="@+id/oficina_disp"
+        android:layout_width="match_parent"
+        android:layout_height="22dp"
+        android:layout_marginTop="28dp"
+        android:text="Disponibilidade da oficina"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/oficina_reboque" />
+
+    <TextView
+        android:id="@+id/oficina_reboque"
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:layout_marginTop="35dp"
+        android:text="Serviço de reboque:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/oficina_local" />
+
+    <TextView
+        android:id="@+id/oficina_local"
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:layout_marginTop="20dp"
+        android:text="Localização da oficina "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/oficina_desc" />
+
+    <ImageButton
+        android:id="@+id/fav_btn"
+        android:layout_width="53dp"
+        android:layout_height="56dp"
+        android:background="@mipmap/no_fav_btn_round"
+        app:layout_constraintEnd_toStartOf="@+id/oficina_nome"
+        app:layout_constraintHorizontal_bias="0.144"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/oficina_nome" />
+
+    <ImageButton
+        android:id="@+id/directions_btn"
+        android:layout_width="58dp"
+        android:layout_height="55dp"
+        android:background="@mipmap/directions_btn_round"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.846"
+        app:layout_constraintStart_toEndOf="@+id/oficina_nome"
+        app:layout_constraintTop_toBottomOf="@+id/oficina_nome" />
+
+    <RatingBar
+        android:id="@+id/oficina_estrelas"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:rating="2"
+        android:stepSize="0.5"
+        app:layout_constraintBottom_toTopOf="@+id/oficina_desc"
+        app:layout_constraintEnd_toStartOf="@+id/directions_btn"
+        app:layout_constraintStart_toEndOf="@+id/fav_btn"
+        app:layout_constraintTop_toBottomOf="@+id/oficina_nome" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
