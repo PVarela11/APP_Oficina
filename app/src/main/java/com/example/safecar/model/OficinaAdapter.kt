@@ -1,23 +1,21 @@
-package com.example.safecar
+package com.example.safecar.model
 
 import android.content.Context
 import android.content.Intent
-import android.content.res.Resources
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.safecar.model.Oficina
-import kotlinx.android.synthetic.main.item_recycler_view.*
 import kotlinx.android.synthetic.main.item_recycler_view.view.*
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
+import com.example.safecar.ItemActivity
+import com.example.safecar.R
 
 //class OficinaAdapter(val context: Context,val oficinas: MutableList<Oficina>) : RecyclerView.Adapter<OficinaAdapter.OficinaViewHolder>() {
-class OficinaAdapter(val context: Context): ListAdapter<Oficina, OficinaAdapter.OficinaViewHolder>(DiffCallback()){
+class OficinaAdapter(val context: Context): ListAdapter<Oficina, OficinaAdapter.OficinaViewHolder>(
+    DiffCallback()
+){
     var lista: ArrayList<String> = ArrayList()
     inner class OficinaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         init {

@@ -7,6 +7,10 @@ plugins {
 android {
     compileSdkVersion 30
 
+    androidExtensions {
+        experimental = true
+    }
+
     defaultConfig {
         applicationId "com.example.safecar"
         minSdkVersion 16
@@ -50,6 +54,8 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.2'
     implementation 'androidx.recyclerview:recyclerview:1.2.0-beta01'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

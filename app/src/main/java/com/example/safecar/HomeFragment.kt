@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.safecar.model.Oficina
+import com.example.safecar.model.OficinaAdapter
 //import com.example.safecar.model.fakeOficinas
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -49,7 +49,6 @@ class HomeFragment : Fragment() {
                     "${document.data?.get("reboque")}",
                     "${document.data?.get("morada")}"
                 )
-
                 oficinas += oficina
             }
 
