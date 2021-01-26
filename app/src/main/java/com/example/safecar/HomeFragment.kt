@@ -51,7 +51,6 @@ class HomeFragment : Fragment() {
                 )
                 oficinas += oficina
             }
-
             val adapter = recycler_view.adapter as OficinaAdapter
             adapter.submitList(oficinas)
         }

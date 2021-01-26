@@ -17,6 +17,8 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.safecar.model.Marcadores
 import com.google.android.gms.location.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.type.LatLng
@@ -30,9 +32,11 @@ class MainActivity : AppCompatActivity() {
     lateinit var homeFragment: HomeFragment
     //lateinit var mapsFragment: MapsFragment
     lateinit var userFragment: UserFragment
+    lateinit var carroFragment: CarroFragment
     lateinit var marcadores: Marcadores
     lateinit var fusedLocationProviderClient: FusedLocationProviderClient
     lateinit var locationRequest: LocationRequest
+    var firebaseUser = FirebaseAuth.getInstance().currentUser
     //lateinit var coordenadas: DoubleArray
 
     //the permission id is just an int that must be unique, any number can be used
@@ -48,6 +52,8 @@ class MainActivity : AppCompatActivity() {
         //coordenadas[1] = -122.084
         getLastLocation()
 
+        println("sdfkjhfkjsdghfgoisdgfuigsdiuf")
+        println(firebaseUser?.displayName)
 
         val marcadoresLista =loadMarkers()
 
@@ -101,18 +107,15 @@ class MainActivity : AppCompatActivity() {
                             .commit()
                 }
 
-                R.id.settings -> {
-                    goToSettingsActivity()
-                    //settingsFragment = SettingsFragment()
-                    //supportFragmentManager
-                      //      .beginTransaction()
-                       //     .replace(R.id.frame_layout, settingsFragment)
-                        //    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                         //   .commit()
-
+                R.id.carros -> {
+                    carroFragment = CarroFragment()
+                    supportFragmentManager
+                        .beginTransaction()
+                        .replace(R.id.frame_layout, carroFragment)
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                        .commit()
                 }
             }
-
             true
         }
     }
@@ -211,11 +214,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun goToSettingsActivity(){
-        val intent = Intent(this, PreferencesActivity::class.java)
-        startActivity(intent)
-    }
-
     private fun loadMarkers(): MutableList<Marcadores> {
         val docs = Firebase.firestore.collection("Oficinas")
         val marcadores = mutableListOf<Marcadores>()
@@ -231,4 +229,5 @@ class MainActivity : AppCompatActivity() {
         }
         return marcadores
     }
+
 }

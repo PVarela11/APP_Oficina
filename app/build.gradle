@@ -42,6 +42,7 @@ android {
 
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
 
 dependencies {
 
@@ -65,9 +66,13 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
     implementation "androidx.activity:activity-ktx:1.1.0"
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.2'
+
     implementation platform('com.google.firebase:firebase-bom:26.2.0')
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-firestore-ktx'
     implementation 'com.firebaseui:firebase-ui-auth:6.4.0'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
     implementation 'com.android.support:multidex:1.0.3'
 }
