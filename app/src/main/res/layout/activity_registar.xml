@@ -33,13 +33,32 @@
             android:textColorHint="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tet_email"
+                android:id="@+id/tet_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:ems="10"
                 android:imeOptions="actionDone"
                 android:inputType="textPersonName"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_username"
+            android:textColorHint="@color/black"
+            android:layout_marginTop="13dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tet_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:ems="10"
+                android:imeOptions="actionDone"
+                android:inputType="textEmailAddress"
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -72,9 +91,8 @@
             android:textSize="15sp"
             android:textColor="@color/black"/>
 
-
         <Button
-            android:id="@+id/btn_registo"
+            android:id="@+id/btn_registar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"

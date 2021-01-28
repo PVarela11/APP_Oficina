@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".HomeFragment">
 
 
@@ -13,26 +14,25 @@
         android:layout_width="match_parent"
         android:layout_height="57dp"
         android:background="?attr/colorPrimary"
-        app:title="Oficinas"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/toolbar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:menu="@menu/toolbar"/>
+        app:title="Oficinas" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/white"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_recycler_view"
         android:layout_above="@+id/bot_nav"
         android:layout_marginTop="57dp"
         android:layout_marginBottom="50dp"
-        />
+        android:background="#72B2FF"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_recycler_view" />
 
     <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"

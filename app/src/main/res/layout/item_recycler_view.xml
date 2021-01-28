@@ -6,63 +6,69 @@
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/card_view_bg"
+    android:backgroundTint="#72B2FF"
     tools:showIn="@layout/fragment_home">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginLeft="16dp">
+        android:layout_marginRight="16dp"
+        android:backgroundTint="#72B2FF"
+        android:layout_marginBottom="16dp"
+        android:background="#FFFFFF">
+
         <ImageView
             android:id="@+id/img_oficina"
-            android:contentDescription="Imagem oficina"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/oficina1"/>
+            android:contentDescription="Imagem oficina"
+            android:src="@drawable/oficina1" />
+
         <TextView
             android:id="@+id/txt_user"
-            android:textColor="@color/teal_200"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
-            tools:text="Oficina do Senhor Armando"
+            android:layout_alignTop="@+id/img_oficina"
             android:layout_marginLeft="16dp"
             android:layout_toRightOf="@+id/img_oficina"
-            android:layout_alignTop="@+id/img_oficina"/>
+            android:textColor="@color/teal_200"
+            android:textSize="18sp"
+            tools:text="Oficina do Senhor Armando" />
         <!--android:singleLine="true" (Na textView de baixo)-->
         <!--Máximo de caracteres é 81-->
         <TextView
             android:id="@+id/txt_subject"
-            android:ellipsize="marquee"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txt_user"
             android:layout_alignLeft="@+id/txt_user"
-            tools:text="Descrição teste da oficina do senhor josé, seja muito bem vindo"
+            android:ellipsize="marquee"
             android:textSize="15sp"
-            />
+            tools:text="Descrição teste da oficina do senhor josé, seja muito bem vindo" />
+
         <RatingBar
             android:id="@+id/ratingBar"
-            android:isIndicator="true"
-            android:rating="0"
-            android:numStars="5"
-            android:stepSize="0.5"
             style="?android:attr/ratingBarStyleSmall"
             android:layout_width="80dp"
             android:layout_height="20dp"
-            android:layout_marginBottom="0dp"
-            android:layout_marginTop="40dp"
             android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"/>
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="0dp"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:rating="0"
+            android:stepSize="0.5" />
+
         <ImageView
             android:id="@+id/img_disponibilidade"
-            android:contentDescription="Disponibilidade da oficina"
             android:layout_width="10dp"
             android:layout_height="15dp"
+            android:layout_alignTop="@+id/txt_user"
             android:layout_alignParentRight="true"
-            app:srcCompat="@drawable/ponto_verde"
-            android:layout_alignTop="@+id/txt_user"/>
+            android:contentDescription="Disponibilidade da oficina"
+            app:srcCompat="@drawable/ponto_verde" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

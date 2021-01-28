@@ -2,9 +2,9 @@
 
     <PreferenceCategory app:title="@string/messages_header">
 
-        <EditTextPreference
-            app:key="signature"
-            app:title="@string/signature_title"
+        <Preference
+            app:key="logout"
+            app:title="@string/logout"
             app:useSimpleSummaryProvider="true" />
 
         <ListPreference
@@ -35,7 +35,7 @@
 
         <EditTextPreference
             app:key="signature"
-            app:title="@string/signature_title"
+            app:title="@string/logout"
             app:useSimpleSummaryProvider="true" />
 
         <ListPreference

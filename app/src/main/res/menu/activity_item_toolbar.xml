@@ -10,7 +10,7 @@
         />
 
     <item android:id="@+id/fav"
-        android:title="Favorittar"
+        android:title="Favoritar"
         android:icon="@drawable/fav"
         app:showAsAction="always" />
 </menu>

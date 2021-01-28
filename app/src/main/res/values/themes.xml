@@ -24,13 +24,11 @@
     <style name="Theme.SafeCar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="Splash" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowBackground">@drawable/oficina1</item>
-
-        <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
-        <item name="android:windowFullscreen">true</item>
+        <item name="windowNoTitle">true</item>
         <item name="android:windowContentOverlay">@null</item>
-
+        <item name="android:windowBackground">@android:color/transparent</item>
     </style>
+
 
 </resources>

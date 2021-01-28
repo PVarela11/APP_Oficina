@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var fusedLocationProviderClient: FusedLocationProviderClient
     lateinit var locationRequest: LocationRequest
     var firebaseUser = FirebaseAuth.getInstance().currentUser
+    //private lateinit var auth: FirebaseAuth
     //lateinit var coordenadas: DoubleArray
 
     //the permission id is just an int that must be unique, any number can be used
@@ -51,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         //coordenadas[0] = 37.4219983
         //coordenadas[1] = -122.084
         getLastLocation()
-
+        //FirebaseAuth.getInstance().signOut()
         println("sdfkjhfkjsdghfgoisdgfuigsdiuf")
         println(firebaseUser?.displayName)
 

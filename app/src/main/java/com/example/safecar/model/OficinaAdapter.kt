@@ -16,9 +16,11 @@ import com.example.safecar.R
 class OficinaAdapter(val context: Context): ListAdapter<Oficina, OficinaAdapter.OficinaViewHolder>(
     DiffCallback()
 ){
+    //var filterList = ArrayList<String>()
     var lista: ArrayList<String> = ArrayList()
     inner class OficinaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         init {
+            //Quando clica num item entra na função em baixo
             itemView.setOnClickListener {
                 println("TesteONCLICK(dfgjbjkfdhgdfkhgluikdfhglkhdfklghklfdhgihdfkljghfdg)")
                 val pos = absoluteAdapterPosition
@@ -56,7 +58,8 @@ class OficinaAdapter(val context: Context): ListAdapter<Oficina, OficinaAdapter.
 
         val oficina = getItem(position)
         //val pos1 = holder.absoluteAdapterPosition
-
+        //filterList.add(oficina.nome)
+        //println(filterList)
         //holder.bind(oficina)
         //holder.itemView.setOnClickListener { listener(oficina) }
 

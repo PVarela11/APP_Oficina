@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.safecar.model.Carros
 import com.example.safecar.model.idCarro
 import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
@@ -72,19 +74,23 @@ class CarroFragment : Fragment() {
 
     private fun loadIdCarros() {
         println("LoadCarros")
-        val userId = "1"
-        val user = Firebase.firestore.collection("Users").whereEqualTo("id", userId)
-        user.addSnapshotListener { snapshot, e ->
-            val idCarros = mutableListOf<idCarro>()
-            for (document in snapshot!!.documents){
-                val carros = document!!["idCarros"] as List<Map<String, Any>>?
-                //println("ola tipo")
-                println(carros)
 
-                loadCarros(carros)
-            }
+        val userId = FirebaseAuth.getInstance().currentUser?.uid.toString()
+        val docRef = Firebase.firestore.collection("Users").document(userId)
+        docRef.get()
+                .addOnSuccessListener { document ->
+                    if (document != null) {
+                        val carros = document["idCarros"] as List<Map<String, Any>>?
+                        //val teste = document["email"] as String
+                        //println(teste)
+                        loadCarros(carros)
+                    } else {
+                        Toast.makeText(context, "Usuário não existe", Toast.LENGTH_LONG).show()
+                    }
+                }
+                .addOnFailureListener{ exception ->
+                    Toast.makeText(context, "Ocorreu um erro na ligação com a base de dados", Toast.LENGTH_LONG).show()
         }
-
     }
 
     private fun loadCarros(lista: List<Map<String, Any>>?){

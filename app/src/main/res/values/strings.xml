@@ -30,7 +30,8 @@
     <string name="btn_login">Login</string>
     <string name="btn_registar">Registar</string>
     <string name="btn_guest">Entrar como convidado</string>
-    <string name="hint_email">Insira o seu email</string>
+    <string name="hint_email">Insira o seu username</string>
+    <string name="hint_username">Insira o seu e-mail</string>
     <string name="hint_pw">Insira a sua password</string>
     <string name="erro_login">Credenciais invalidas</string>
     <string name="avatar">Username</string>
@@ -49,7 +50,7 @@
     </string-array>
 
     <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
+    <string name="logout">Log Out</string>
     <string name="reply_title">Default reply action</string>
     <!-- Sync Preferences -->
     <string name="sync_title">Sync email periodically</string>

@@ -5,17 +5,17 @@
 
 
     <!-- Settings, should always be in the overflow -->
-    <item android:id="@+id/action_settings"
+    <item android:id="@+id/rating"
         android:title="Filtrar por rating"
         app:showAsAction="never"/>
 
     <item
-        android:id="@+id/action_favorite"
+        android:id="@+id/disponibilidade"
         android:icon="@drawable/ic_action_settings"
         android:title="Filtrar por disponibilidade" />
 
     <item
-        android:id="@+id/app_bar_search"
+        android:id="@+id/pesquisa"
         android:icon="@drawable/ic_search_black_24dp"
         android:title="Search"
         app:actionViewClass="android.widget.SearchView"

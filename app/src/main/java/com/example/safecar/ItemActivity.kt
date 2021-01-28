@@ -3,17 +3,16 @@ package com.example.safecar
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.safecar.model.Oficina
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_home.*
-import android.content.Context
-import android.content.Intent
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FieldValue
 import kotlinx.android.synthetic.main.item_recycler_view.view.*
 
 class ItemActivity : AppCompatActivity() {
@@ -45,16 +44,18 @@ class ItemActivity : AppCompatActivity() {
         txt_desc = findViewById(R.id.oficina_desc)
         txt_desc.text = lista[2]
         txt_disp = findViewById(R.id.oficina_disp)
-        txt_disp.text = lista[3]
+        txt_disp.text = "Disponibilidade da oficina" + "\n" +lista[3]
+        println(lista[3])
         txt_reboque = findViewById(R.id.oficina_reboque)
-        txt_reboque.text = lista[6]
+        txt_reboque.text = "A oficina " + lista[6] + " dispoõe de reboque"
         txt_local = findViewById(R.id.oficina_local)
-        txt_local.text = lista[7]
+        txt_local.text = "Localização da oficina:" + "\n" + lista[7]
         img_oficina = findViewById(R.id.oficina_img)
         val packageName = "com.example.safecar"
         //val drawableId: Int = context.getResources().getIdentifier(caminho, "drawable", packageName)
         //val draw = "R.drawable."
         val caminho = lista[5]
+        //println(lista[5])
         val imageResource: Int = this.getResources().getIdentifier(
             caminho,
             "drawable",
@@ -114,10 +115,18 @@ class ItemActivity : AppCompatActivity() {
         }
         if (id == R.id.fav) {
             Toast.makeText(this, "Item Two Clicked", Toast.LENGTH_LONG).show()
+            addFav(lista[0])
             return true
         }
 
         return super.onOptionsItemSelected(item)
 
+    }
+
+    private fun addFav(id: String) {
+        println(id)
+        val userId = FirebaseAuth.getInstance().currentUser?.uid.toString()
+        val docRef = Firebase.firestore.collection("Users").document(userId)
+        docRef.update("idFavoritos", FieldValue.arrayUnion(id))
     }
 }
