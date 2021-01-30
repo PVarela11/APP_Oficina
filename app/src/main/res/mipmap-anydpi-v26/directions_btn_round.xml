@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
     <background android:drawable="@color/directions_btn_background"/>
-    <foreground android:drawable="@drawable/directions_btn_foreground"/>
+    <foreground android:drawable="@drawable/add"/>
 </adaptive-icon>

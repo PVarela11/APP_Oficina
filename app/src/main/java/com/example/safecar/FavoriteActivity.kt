@@ -9,38 +9,35 @@ import android.view.View
 import android.widget.Toast
 import android.widget.Toolbar
 import androidx.fragment.app.FragmentTransaction
-import kotlinx.android.synthetic.main.fragment_user.*
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.safecar.model.*
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+
 
 class FavoriteActivity : AppCompatActivity() {
 
-
+    lateinit var favFragment: FavoriteFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_favorito)
 
         setSupportActionBar(findViewById(R.id.toolbar_favorito))
-    }
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.activity_favorito_toolbar, menu)
-        return true
-    }
+        favFragment = FavoriteFragment()
+        supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.frame_fav, favFragment)
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .commit()
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        setSupportActionBar(findViewById(R.id.toolbar_favorito))
+        //val recyclerAdapter: OficinasFavAdapter = OficinasFavAdapter()
+        //rv_favs.adapter = OficinasFavAdapter(this)
 
-        val id = item.getItemId()
-
-        if (id == R.id.back_fav) {
-            Toast.makeText(this, "Item One Clicked", Toast.LENGTH_LONG).show()
-            return true
-        }
-            if (id == R.id.home_fav) {
-           Toast.makeText(this, "Item Two Clicked", android.widget.Toast.LENGTH_LONG).show()
-           return true
-        }
-
-        return super.onOptionsItemSelected(item)
     }
 
 }

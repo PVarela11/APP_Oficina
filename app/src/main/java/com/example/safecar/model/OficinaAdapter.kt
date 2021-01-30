@@ -9,8 +9,12 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_recycler_view.view.*
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
+import com.bumptech.glide.Glide
 import com.example.safecar.ItemActivity
 import com.example.safecar.R
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
+import kotlinx.android.synthetic.main.carros_rv.view.*
 
 //class OficinaAdapter(val context: Context,val oficinas: MutableList<Oficina>) : RecyclerView.Adapter<OficinaAdapter.OficinaViewHolder>() {
 class OficinaAdapter(val context: Context): ListAdapter<Oficina, OficinaAdapter.OficinaViewHolder>(
@@ -35,8 +39,6 @@ class OficinaAdapter(val context: Context): ListAdapter<Oficina, OficinaAdapter.
                 lista.add(oficina2.oficinaIMG)
                 lista.add(oficina2.reboque)
                 lista.add(oficina2.morada)
-                //Toast.makeText(context, oficina2.nome, Toast.LENGTH_SHORT).show()
-                //aval item = OficinaViewHolder(itemView.).absoluteAdapterPosition
                 val intent = Intent(itemView.context, ItemActivity::class.java)
                 intent.putExtra("Oficina", lista)
                 itemView.context.startActivity(intent)
@@ -54,29 +56,23 @@ class OficinaAdapter(val context: Context): ListAdapter<Oficina, OficinaAdapter.
     }
 
     override fun onBindViewHolder(holder: OficinaViewHolder, position: Int) {
-        //holder.bind(oficinas[position])
+
 
         val oficina = getItem(position)
-        //val pos1 = holder.absoluteAdapterPosition
-        //filterList.add(oficina.nome)
-        //println(filterList)
-        //holder.bind(oficina)
-        //holder.itemView.setOnClickListener { listener(oficina) }
+
 
         holder.itemView.txt_user.text = oficina.nome
         holder.itemView.txt_subject.text = oficina.morada
 
 
-        val packageName = "com.example.safecar"
-        //val drawableId: Int = context.getResources().getIdentifier(caminho, "drawable", packageName)
-        //val draw = "R.drawable."
-        val caminho = oficina.oficinaIMG
-        val imageResource: Int = context.getResources().getIdentifier(
-            caminho,
-            "drawable",
-            packageName
-        )
-        holder.itemView.img_oficina.setImageResource(imageResource)
+//        val packageName = "com.example.safecar"
+//        val caminho = oficina.oficinaIMG
+//        val imageResource: Int = context.getResources().getIdentifier(
+//            caminho,
+//            "drawable",
+//            packageName
+//        )
+//        holder.itemView.img_oficina.setImageResource(imageResource)
 
         val numDisp : String = oficina.disponibilidade
         holder.itemView.img_disponibilidade.setImageResource(
@@ -125,30 +121,29 @@ class OficinaAdapter(val context: Context): ListAdapter<Oficina, OficinaAdapter.
         }
 
 
-        //this.rb.setRating(2)
-        //var rate : String = estrelas
-        //itemView.ratingBar.rating = numStar.toFloat()
+        var imageref = Firebase.storage.reference.child("oficinaIMG/${oficina.oficinaIMG}.jpg")
 
-        //itemView.ratingBar.rating
 
-        //itemView.img_stars.setImageResource(
-        //when (numStar) {
-        //"1" -> R.drawable.estrela1
-        //"2" -> R.drawable.estrela2
-        //"3" -> R.drawable.estrela3
-        //"4" -> R.drawable.estrela4
-        //else -> R.drawable.estrela5
-        //}
-        //)
+
+        imageref.downloadUrl.addOnSuccessListener {Uri->
+
+            val imageURL = Uri.toString()
+            var imageoficina = holder.itemView.img_oficina
+
+            Glide.with(context)
+                .load(imageURL)
+                .into(imageoficina)
+
+        }
     }
 
     override fun getItemId(position: Int): Long {
         return currentList[position].id.toLong()
     }
 
-    //override fun getItemCount(): Int = oficina.size
 
-    private class DiffCallback : DiffUtil.ItemCallback<Oficina>() {
+
+    class DiffCallback : DiffUtil.ItemCallback<Oficina>() {
 
         override fun areItemsTheSame(oldItem: Oficina, newItem: Oficina) =
             oldItem.id == newItem.id

@@ -7,7 +7,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/card_view_bg"
     android:backgroundTint="#72B2FF"
-    tools:showIn="@layout/fragment_home">
+    tools:showIn="@layout/fragment_favorite">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -20,14 +20,14 @@
         android:background="#FFFFFF">
 
         <ImageView
-            android:id="@+id/img_oficina"
+            android:id="@+id/fav_img"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:contentDescription="Imagem oficina"
-             />
+            />
 
         <TextView
-            android:id="@+id/txt_user"
+            android:id="@+id/fav_user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/img_oficina"
@@ -39,7 +39,7 @@
         <!--android:singleLine="true" (Na textView de baixo)-->
         <!--Máximo de caracteres é 81-->
         <TextView
-            android:id="@+id/txt_subject"
+            android:id="@+id/fav_subject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txt_user"
@@ -49,7 +49,7 @@
             tools:text="Descrição teste da oficina do senhor josé, seja muito bem vindo" />
 
         <RatingBar
-            android:id="@+id/ratingBar"
+            android:id="@+id/fav_ratingBar"
             style="?android:attr/ratingBarStyleSmall"
             android:layout_width="80dp"
             android:layout_height="20dp"
@@ -63,7 +63,7 @@
             android:stepSize="0.5" />
 
         <ImageView
-            android:id="@+id/img_disponibilidade"
+            android:id="@+id/fav_disponibilidade"
             android:layout_width="10dp"
             android:layout_height="15dp"
             android:layout_alignTop="@+id/txt_user"

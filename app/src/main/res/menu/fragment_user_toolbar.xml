@@ -3,15 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <!-- "Mark Favorite", should appear as action button if possible -->
 
+    <item android:id="@+id/favorito"
+        android:title="Favoritos"
+        android:icon="@drawable/ic_action_favoritos"
+        app:showAsAction="always" />
 
     <item android:id="@+id/settings_user"
         android:title="@string/settings"
         android:icon="@drawable/ic_action_settings"
         app:showAsAction="always"
         />
-
-    <item android:id="@+id/favorito"
-        android:title="Favoritos"
-        android:icon="@drawable/ic_action_favoritos"
-        app:showAsAction="always" />
 </menu>

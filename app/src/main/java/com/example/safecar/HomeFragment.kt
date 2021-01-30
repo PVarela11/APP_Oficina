@@ -83,12 +83,4 @@ class HomeFragment : Fragment() {
             adapter.submitList(oficinas)
         }
     }
-
-//    private fun ordernar(ordena: Int) {
-//        if (ordena == 1){
-//            println("Ordenar por rating")
-//        }else{
-//            println("Ordenar por disponibilidade")
-//        }
-//    }
 }

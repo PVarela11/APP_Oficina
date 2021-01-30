@@ -29,7 +29,7 @@ import kotlin.properties.Delegates
 
 class UserFragment : Fragment() {
 
-
+    var firebaseUser = FirebaseAuth.getInstance().currentUser
     private lateinit var view: FragmentUserBinding
     private var data by Delegates.notNull<Long>()
     private lateinit var nome: String
@@ -50,6 +50,8 @@ class UserFragment : Fragment() {
         return view.root
     }
 
+
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         data()

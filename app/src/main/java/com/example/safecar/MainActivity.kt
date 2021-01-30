@@ -56,6 +56,8 @@ class MainActivity : AppCompatActivity() {
         println("sdfkjhfkjsdghfgoisdgfuigsdiuf")
         println(firebaseUser?.displayName)
 
+
+
         val marcadoresLista =loadMarkers()
 
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bot_nav)

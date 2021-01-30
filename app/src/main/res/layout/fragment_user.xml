@@ -28,8 +28,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="125dp"
         android:contentDescription="@string/avatar"
-        android:src="@drawable/ic_action_user"
-        tools:src="@drawable/ic_action_user" />
+        android:src="@drawable/ic_action_user" />
 
     <TextView
         android:id="@+id/textusername"

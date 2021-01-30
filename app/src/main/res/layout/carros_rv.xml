@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/card_view_bg"
+    android:backgroundTint="#72B2FF"
+    tools:showIn="@layout/fragment_carro">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:backgroundTint="#72B2FF"
+        android:layout_marginBottom="16dp"
+        android:background="#FFFFFF">
+
+
+        <ImageView
+            android:id="@+id/img_carro"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="Imagem Carro"
+             />
+        <TextView
+            android:id="@+id/txtmarca"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@+id/img_carro"
+            android:text="Marca"
+            android:layout_alignTop="@id/img_carro"/>
+
+        <TextView
+            android:id="@+id/txtmodelo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@+id/txtmarca"
+            android:text="Modelo"/>
+
+        <TextView
+            android:id="@+id/txtano"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_below="@id/txtmarca"
+            android:layout_toEndOf="@id/img_carro"
+            android:text="Ano"
+            android:layout_toRightOf="@id/img_carro" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
