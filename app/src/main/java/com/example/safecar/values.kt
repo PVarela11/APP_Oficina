@@ -2,7 +2,14 @@ package com.example.safecar
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.os.Build.MANUFACTURER
+import android.os.Build.MODEL
 import androidx.preference.PreferenceManager
+import com.google.firebase.auth.FirebaseAuth
+
+
+fun userID() = FirebaseAuth.getInstance().currentUser?.displayName
+//fun deviceName() = "$MODEL-$MANUFACTURER"
 
 object SavedPreference {
 

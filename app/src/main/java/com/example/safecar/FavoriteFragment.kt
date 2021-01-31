@@ -51,6 +51,7 @@ class FavoriteFragment : Fragment() {
                         loadFavs(favs)
                         println(favs)
                     } else {
+                        println("else")
                         Toast.makeText(requireContext(), "Usuário não existe", Toast.LENGTH_LONG).show()
                     }
                 }
@@ -76,12 +77,14 @@ class FavoriteFragment : Fragment() {
 
 
         x=0
+        println(teste)
         val favs = mutableListOf<FavOficinas>()
         for (item: String in teste){
+            println("Entrou no primeiro ciclo")
             testeString= item
+            println(testeString)
             var fav = Firebase.firestore.collection("Oficinas").whereEqualTo("id", testeString)
             fav.addSnapshotListener { snapshot, e ->
-
                 for (document in snapshot!!.documents){
                     println("Entrou no segundo ciclo")
                     val favoritos = FavOficinas(
@@ -94,7 +97,7 @@ class FavoriteFragment : Fragment() {
                             "${document.data?.get("reboque")}",
                             "${document.data?.get("morada")}"
                     )
-                    //println(carro)
+                    println(favoritos)
 
                     favs += favoritos
                 }

@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
     //lateinit var mapsFragment: MapsFragment
     lateinit var userFragment: UserFragment
     lateinit var carroFragment: CarroFragment
+    lateinit var chatFragment: ChatFragment
     lateinit var marcadores: Marcadores
     lateinit var fusedLocationProviderClient: FusedLocationProviderClient
     lateinit var locationRequest: LocationRequest
@@ -117,6 +118,15 @@ class MainActivity : AppCompatActivity() {
                         .replace(R.id.frame_layout, carroFragment)
                         .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                         .commit()
+                }
+
+                R.id.chat -> {
+                    chatFragment = ChatFragment()
+                    supportFragmentManager
+                            .beginTransaction()
+                            .replace(R.id.frame_layout, chatFragment)
+                            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                            .commit()
                 }
             }
             true
