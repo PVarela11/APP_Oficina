@@ -1,4 +1,6 @@
 # APP_Oficina
 Aplicação Android para oficinas
-
-Feito por Pedro Varela e Bucha
+Tecnologias usadas :
+  -Kotlin
+  -Firebase
+  -Google Maps
